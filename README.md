@@ -17,6 +17,7 @@ This application runs on your PC/laptop (where Discord is installed) and connect
 - **Smart parsing**: Automatically parses artist and title information even when stations combine them into a single field
 - **Auto-reconnect**: Automatically reconnects to Discord if connection is lost
 - **Lightweight**: Minimal resource usage, checks Volumio API every 5 seconds
+- **Not a Volumio Plugin**: This runs on your local PC/Laptop, not on the Volumio device itself. 
 
 ### Display Format
 
@@ -24,6 +25,7 @@ The Discord Rich Presence card will show:
 - **Details**: Song title
 - **State**: Artist - Album (or just Artist/Album if one is missing)
 - **Large Image**: Volumio logo (customizable in Discord Developer Portal)
+
 
 ---
 
