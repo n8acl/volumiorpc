@@ -42,8 +42,8 @@ The Discord Rich Presence card will show:
 
 1. **Clone or download this repository**
 ```bash
-   git clone https://github.com/yourusername/volumio-discord-rpc.git
-   cd volumio-discord-rpc
+   git clone https://github.com/n8acl/volumiorpc.git
+   cd volumiorpc
 ```
 
 2. **Install Python dependencies**
@@ -83,7 +83,7 @@ To use Discord Rich Presence, you need to create a Discord application:
 
 ### Manual Run (Testing)
 ```bash
-python volumio_discord.py
+python volumio_rpc.py
 ```
 
 ### Run as Background Service (Linux - Recommended)
@@ -147,7 +147,7 @@ sudo loginctl enable-linger $USER
 3. Trigger: "When I log on"
 4. Action: "Start a program"
 5. Program: `python` or `pythonw` (for no console window)
-6. Arguments: `C:\path\to\volumio_rpc.py`
+6. Arguments: `C:\path\to\volumiorpc\volumio_rpc.py`
 7. Start in: `C:\path\to\volumiorpc\`
 
 ### Run as Background Service (macOS)
