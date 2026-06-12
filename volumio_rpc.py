@@ -3,6 +3,7 @@ import time
 import requests
 import re
 from pypresence import Presence
+from pypresence.types import ActivityType
 
 def load_config():
     with open("config.json") as f:
@@ -16,11 +17,11 @@ def main():
 
     rpc = Presence(client_id)
 
-    print("Waiting for Discord...")
+    # print("Waiting for Discord...")
     while True:
         try:
             rpc.connect()
-            print("Connected to Discord RPC.")
+            # print("Connected to Discord RPC.")
             break
         except Exception:
             time.sleep(3)
@@ -78,6 +79,7 @@ def main():
                     # Only include state if we have artist or album info
                     if state_text:
                         rpc.update(
+                            activity_type=ActivityType.LISTENING,
                             details=title,
                             state=state_text,
                             large_image="volumio.png",
@@ -85,15 +87,16 @@ def main():
                         )
                     else:
                         rpc.update(
+                            activity_type=ActivityType.LISTENING,
                             details=title,
                             large_image="volumio.png",
                             large_text="Volumio"
                         )
-                    print(f"Now playing: {title} - {state_text}")
+                    # print(f"Now playing: {title} - {state_text}")
                     last_title = title
             else:
-                if last_title:
-                    print("Playback stopped.")
+                # if last_title:
+                #     print("Playback stopped.")
                 rpc.clear()
                 last_title = None
 
